@@ -1,0 +1,52 @@
+{
+  "format": "jewcal-1",
+  "calendar": {
+    "id": "org.jewcal.test-calendar",
+    "name": "JewCal test calendar",
+    "description": "Public demo calendar for testing JewCal imports and subscriptions.",
+    "owner": "JewCal",
+    "timezone": "UTC",
+    "version": 1
+  },
+  "events": [
+    {
+      "id": "welcome-event",
+      "title": "Welcome to the test calendar",
+      "description": "A one-time example event.",
+      "recurrence": "NONE",
+      "isAllDay": true,
+      "date": {
+        "gregorian": "2026-08-12"
+      }
+    },
+    {
+      "id": "daily-minyan",
+      "title": "Daily minyan (demo)",
+      "recurrence": "DAILY",
+      "isAllDay": false,
+      "date": {
+        "gregorian": "2026-08-10"
+      },
+      "time": "07:30"
+    },
+    {
+      "id": "weekly-class",
+      "title": "Weekly Torah class (demo)",
+      "recurrence": "WEEKLY",
+      "isAllDay": false,
+      "date": {
+        "gregorian": "2026-08-11"
+      },
+      "time": "19:00"
+    },
+    {
+      "id": "annual-picnic",
+      "title": "Annual community picnic (demo)",
+      "recurrence": "YEARLY_GREGORIAN",
+      "isAllDay": true,
+      "date": {
+        "gregorian": "2026-08-16"
+      }
+    }
+  ]
+}
