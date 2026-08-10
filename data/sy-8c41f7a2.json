@@ -1,25 +1,25 @@
 {
-  "format": "jewcal-supporter-yahrzeits-2",
+  "format": "jewcal-supporter-yahrzeits-3",
   "entries": [
     {
       "id": "example-miriam",
       "name": "Example — Miriam bat Leah",
       "from": "Example — Cohen family",
-      "note": "May her memory be a blessing.",
+      "message": "May her memory be a blessing.",
       "hebrewDate": "15 Av 5786"
     },
     {
       "id": "example-moshe",
       "name": "דוגמה — משה בן אברהם",
       "from": "דוגמה — משפחת לוי",
-      "note": "יהי זכרו ברוך.",
+      "message": "יהי זכרו ברוך.",
       "hebrewDate": "3 Tishrei 5786"
     },
     {
       "id": "example-adar",
       "name": "Example — David ben Rachel",
       "from": "Example supporter",
-      "note": "In loving memory.",
+      "message": "In loving memory.",
       "hebrewDate": "14 Adar II 5784"
     }
   ]

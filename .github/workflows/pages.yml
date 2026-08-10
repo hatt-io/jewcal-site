@@ -25,7 +25,7 @@ jobs:
       - name: Test supporter yahrzeit validator
         run: node scripts/validate-supporter-yahrzeits.mjs --self-test
       - name: Validate supporter yahrzeits
-        run: node scripts/validate-supporter-yahrzeits.mjs supporter-yahrzeits.json
+        run: node scripts/validate-supporter-yahrzeits.mjs data/sy-8c41f7a2.json
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

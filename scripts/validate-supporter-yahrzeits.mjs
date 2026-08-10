@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-const FORMAT = "jewcal-supporter-yahrzeits-2";
+const FORMAT = "jewcal-supporter-yahrzeits-3";
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^(\d{1,2})\s+(.+?)\s+(\d{4,})$/;
 
@@ -20,7 +20,7 @@ export function validateSupporterYahrzeits(content) {
   root.entries.forEach((entry, index) => {
     const label = `entries[${index}]`;
     requireValue(entry && typeof entry === "object" && !Array.isArray(entry), `${label} must be an object`);
-    for (const field of ["id", "name", "from", "note", "hebrewDate"]) {
+    for (const field of ["id", "name", "from", "message", "hebrewDate"]) {
       requireValue(typeof entry[field] === "string" && entry[field].trim(), `${label}.${field} must be a nonblank string`);
     }
     const id = entry.id.trim();
@@ -108,14 +108,14 @@ function selfTest() {
     id: "cohen-rivka",
     name: "רבקה",
     from: "Cohen family",
-    note: "May her memory be a blessing.",
+    message: "May her memory be a blessing.",
     hebrewDate: "15 Av 5786",
   };
   assert.equal(validateSupporterYahrzeits(file([])).entries.length, 0);
   assert.equal(validateSupporterYahrzeits(file([valid])).entries[0].name, "רבקה");
   assert.throws(() => validateSupporterYahrzeits("{"));
   assert.throws(() => validateSupporterYahrzeits(file([valid, valid])));
-  assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, note: " " }])));
+  assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, message: " " }])));
   assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, hebrewDate: "30 Iyar 5786" }])));
   assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, hebrewDate: "14 Adar 5784" }])));
   assert.doesNotThrow(() => validateSupporterYahrzeits(file([{ ...valid, hebrewDate: "14 Adar II 5784" }])));
@@ -125,7 +125,7 @@ if (process.argv[2] === "--self-test") {
   selfTest();
   console.log("Supporter yahrzeit validator tests passed");
 } else {
-  const path = process.argv[2] ?? "supporter-yahrzeits.json";
+  const path = process.argv[2] ?? "data/sy-8c41f7a2.json";
   validateSupporterYahrzeits(fs.readFileSync(path, "utf8"));
   console.log(`${path} is valid`);
 }

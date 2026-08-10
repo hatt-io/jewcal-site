@@ -6,7 +6,7 @@ The site is deployed to GitHub Pages from `main` by `.github/workflows/pages.yml
 
 ## Edit Supporter Yahrzeits
 
-Edit only [`supporter-yahrzeits.json`](supporter-yahrzeits.json).
+Edit only [`data/sy-8c41f7a2.json`](data/sy-8c41f7a2.json).
 
 1. Copy one complete entry, including its `{` and `}`.
 2. Add a comma between entries.
@@ -14,7 +14,7 @@ Edit only [`supporter-yahrzeits.json`](supporter-yahrzeits.json).
    - `id`: a permanent unique lowercase ID such as `cohen-rivka-2026`. Never reuse or change it later.
    - `name`: the loved one's display name.
    - `from`: the family, shul, or supporter shown after “From:”.
-   - `note`: a personal wish, dedication, or memorial message shown below “From:”.
+   - `message`: a personal wish, dedication, or memorial message shown below “From:”.
    - `hebrewDate`: for example `15 Av 5786`.
 4. Commit to `main`. GitHub checks the file before deploying it.
 
