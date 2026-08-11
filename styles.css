@@ -180,10 +180,18 @@ h3 { margin: 0 0 8px; font-size: 1.15rem; }
 .guide-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
 .guide-card { padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
 .guide-card p { color: var(--muted); }
+.guide-card-wide { margin-top: 32px; }
+.guide-card-wide h3:not(:first-child) { margin-top: 32px; }
+.guide-step { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr); gap: 34px; align-items: start; margin-top: 36px; }
+.guide-copy h3 { margin-top: 0; }
+.guide-copy h3:not(:first-child) { margin-top: 32px; }
+.guide-copy p { color: var(--muted); }
+.guide-picture { width: min(100%, 390px); margin: 0; justify-self: center; }
+.guide-picture img { display: block; width: 100%; height: auto; border-radius: 24px; box-shadow: var(--shadow); }
+.guide-picture figcaption { margin-top: 12px; color: var(--muted); text-align: center; font-weight: 700; }
 .test-calendar { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; }
 .test-calendar p { color: var(--muted); }
 .test-calendar .actions { justify-content: flex-end; margin: 0; }
-.test-url { overflow-wrap: anywhere; }
 .copy-button { font: inherit; background: transparent; cursor: pointer; }
 
 footer { margin-top: 72px; border-top: 1px solid var(--line); background: var(--surface); }
@@ -197,7 +205,8 @@ footer { margin-top: 72px; border-top: 1px solid var(--line); background: var(--
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .screenshots { grid-template-columns: 1fr; max-width: 390px; margin-inline: auto; }
   .privacy-card { grid-template-columns: 1fr; }
-  .guide-columns, .test-calendar { grid-template-columns: 1fr; }
+  .guide-columns, .guide-step, .test-calendar { grid-template-columns: 1fr; }
+  .guide-picture { width: min(100%, 430px); }
   .test-calendar .actions { justify-content: flex-start; }
 }
 

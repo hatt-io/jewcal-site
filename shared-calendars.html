@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How to create, publish, and subscribe to a shared JewCal calendar.">
+  <meta name="description" content="A simple picture guide for making, sharing, and adding JewCal calendars.">
   <title>Shared calendar guides — JewCal</title>
   <link rel="canonical" href="https://jewcal.org/shared-calendars.html">
   <link rel="icon" href="assets/icon.png">
@@ -17,71 +17,130 @@
         <a href="index.html#features">Features</a>
         <a href="shared-calendars.html" aria-current="page">Shared calendars</a>
         <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/hatt-io/jewcal-site">Site source</a>
       </div>
     </nav>
   </header>
 
   <main class="guide">
-    <p class="eyebrow">JewCal guides</p>
-    <h1>Share one calendar. Keep everyone current.</h1>
-    <p class="lede">A shared calendar is a <code>.jewcal</code> file. Send the file once for a manual import, or put it at a stable HTTPS link so other people can subscribe to updates.</p>
+    <p class="eyebrow">JewCal guide</p>
+    <h1>Share a calendar with other people</h1>
+    <p class="lede">Make a calendar, send someone a copy, or let JewCal keep it current for them.</p>
 
     <nav class="guide-jumps" aria-label="On this page">
-      <a href="#create">Create and publish</a>
-      <a href="#use">Use or subscribe</a>
-      <a href="#test">Try the test calendar</a>
+      <a href="#make">Make and share one</a>
+      <a href="#add">Add one</a>
+      <a href="#test">Try one</a>
     </nav>
 
-    <section class="guide-section" id="create">
-      <p class="eyebrow">For calendar owners</p>
-      <h2>Create and publish a shared calendar</h2>
-      <ol class="steps">
-        <li><strong>Create it.</strong> In JewCal, open <strong>Settings → Shared calendars → New calendar</strong> and give it a clear name.</li>
-        <li><strong>Add events.</strong> When creating or editing each event, select the new calendar in the <strong>Calendar</strong> field.</li>
-        <li><strong>Export it.</strong> Return to <strong>Shared calendars</strong>, open that calendar’s menu, choose <strong>Export</strong>, and save the <code>.jewcal</code> file. Add a password only if every subscriber should need it.</li>
-        <li><strong>Share it.</strong> Send the file for a one-time copy, or upload it to a public HTTPS address for automatic subscriptions. GitHub Pages, a static website, or any direct HTTPS file host works.</li>
-        <li><strong>Publish updates.</strong> After changing events, export again and replace the file at the same HTTPS address. Keep the password choice unchanged; subscribers refresh automatically about every six hours and can also refresh manually.</li>
-      </ol>
-      <aside class="note"><strong>Important:</strong> Anyone with an unprotected link can read the calendar. A password protects the file contents, but share the password separately from the link.</aside>
+    <section class="guide-section" id="make">
+      <p class="eyebrow">If you are making the calendar</p>
+      <h2>Make and share a calendar</h2>
+
+      <div class="guide-step">
+        <div class="guide-copy">
+          <h3>1. Open Shared calendars</h3>
+          <p>In JewCal, tap <strong>Settings</strong>, then <strong>Shared calendars</strong>.</p>
+          <p>The choices at the top let you make, send, or add calendars.</p>
+        </div>
+        <figure class="guide-picture">
+          <img src="assets/shared-calendar-actions.svg" width="720" height="540" loading="lazy" alt="The top of the Shared calendars page">
+          <figcaption>Start in Settings, then tap Shared calendars.</figcaption>
+        </figure>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-copy">
+          <h3>2. Make the calendar</h3>
+          <p>Tap <strong>New calendar</strong>. Give it a clear name, then tap <strong>Save</strong>.</p>
+        </div>
+        <figure class="guide-picture">
+          <img src="assets/shared-calendar-new.svg" width="720" height="831" loading="lazy" alt="The New calendar box with a place to type the calendar name">
+          <figcaption>Type a name, then tap Save.</figcaption>
+        </figure>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-copy">
+          <h3>3. Put events in it</h3>
+          <p>Return to the calendar and tap the plus button. While making the event, tap <strong>Calendar</strong> and choose the calendar you just made.</p>
+        </div>
+        <figure class="guide-picture">
+          <img src="assets/shared-calendar-event.svg" width="720" height="681" loading="lazy" alt="The Calendar choice while making an event">
+          <figcaption>Tap Calendar and choose the calendar you made.</figcaption>
+        </figure>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-copy">
+          <h3>4. Save and send a copy</h3>
+          <p>Open <strong>Shared calendars</strong> again. Tap the three dots beside your calendar, then tap <strong>Export</strong>. Add a password only if you need one.</p>
+          <p>Save the calendar and send it the same way you would send a photo or document.</p>
+        </div>
+        <figure class="guide-picture">
+          <img src="assets/shared-calendar-export.svg" width="720" height="341" loading="lazy" alt="A calendar menu with Export in the middle">
+          <figcaption>Tap the three dots, then tap Export.</figcaption>
+        </figure>
+      </div>
+
+      <div class="guide-card guide-card-wide">
+        <h3>5. Keep everyone’s calendar current</h3>
+        <p>Put the saved calendar on a website and give people its calendar address. If you do not manage the website, ask the person who does to help.</p>
+        <p>After changing events, save the calendar again and replace the old copy on the website. Keep the same calendar address and password.</p>
+      </div>
+
+      <aside class="note"><strong>Keep it private:</strong> Anyone who has the calendar address can get the calendar unless you add a password. Send the password separately.</aside>
     </section>
 
-    <section class="guide-section" id="use">
-      <p class="eyebrow">For calendar members</p>
-      <h2>Use a shared calendar</h2>
-      <div class="guide-columns">
-        <article class="guide-card">
-          <h3>Subscribe to a link</h3>
+    <section class="guide-section" id="add">
+      <p class="eyebrow">If someone shared a calendar with you</p>
+      <h2>Add their calendar to JewCal</h2>
+
+      <div class="guide-step">
+        <div class="guide-copy">
+          <h3>Let JewCal keep it current</h3>
           <ol class="steps compact">
-            <li>Copy the HTTPS calendar link.</li>
-            <li>Open <strong>Settings → Shared calendars → Subscribe to network calendar</strong>.</li>
-            <li>Enter a local name, paste the link, and enter the password if the owner supplied one.</li>
-            <li>Tap <strong>Subscribe</strong>. The calendar appears read-only and stays updated.</li>
+            <li>Copy the calendar address you were given.</li>
+            <li>Open <strong>Settings → Shared calendars</strong>.</li>
+            <li>Tap the button named <strong>Add an online calendar</strong>.</li>
+            <li>Type a name, paste the calendar address, and add the password if you were given one.</li>
+            <li>Tap <strong>Add calendar</strong>.</li>
           </ol>
-          <p>To fetch an update now, open the calendar’s menu and choose <strong>Refresh</strong>. Its visibility switch hides events without unsubscribing.</p>
-        </article>
-        <article class="guide-card">
-          <h3>Import a file once</h3>
+          <p>JewCal checks for changes about every six hours, even when you hide the calendar. Hiding it only hides its events.</p>
+          <p>The website may keep a record of each check. JewCal does not send your personal calendars, location, or settings. <a href="privacy.html">Read more about privacy.</a></p>
+        </div>
+        <figure class="guide-picture">
+          <img src="assets/shared-calendar-from-website.svg" width="720" height="831" loading="lazy" alt="The form for adding a calendar from a website">
+          <figcaption>Paste the calendar address and add the password only if you were given one.</figcaption>
+        </figure>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-copy">
+          <h3>Add a saved copy</h3>
           <ol class="steps compact">
-            <li>Save the received <code>.jewcal</code> file.</li>
-            <li>Open <strong>Settings → Shared calendars → Import calendar</strong>.</li>
-            <li>Select the file, unlock it if asked, then import it as a new calendar.</li>
+            <li>Save the calendar someone sent you.</li>
+            <li>Open <strong>Settings → Shared calendars</strong>.</li>
+            <li>Tap <strong>Import calendar</strong> and choose the saved calendar.</li>
+            <li>Enter the password if JewCal asks for it, then add it as a new calendar.</li>
           </ol>
-          <p>An imported file is an editable snapshot. It does not receive later changes from the owner.</p>
-        </article>
+          <p>This copy does not receive later changes. Ask the sender for a new copy when you need one.</p>
+        </div>
+        <figure class="guide-picture">
+          <img src="assets/shared-calendar-import.svg" width="720" height="90" loading="lazy" alt="The Import calendar choice on the Shared calendars page">
+          <figcaption>Tap Import calendar, then choose the saved calendar.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="guide-section test-calendar" id="test">
       <div>
-        <p class="eyebrow">Safe to experiment with</p>
-        <h2>Try the JewCal test calendar</h2>
-        <p>It contains a one-time event, a weekly event, a daily event, and an annual event. No password is needed.</p>
-        <p class="test-url"><code>https://jewcal.org/jewcal-test-calendar.jewcal</code></p>
+        <p class="eyebrow">Practice without risk</p>
+        <h2>Try a sample calendar</h2>
+        <p>It has four sample events. No password is needed.</p>
       </div>
       <div class="actions">
-        <a class="button primary" href="jewcal-test-calendar.jewcal" download>Download test calendar</a>
-        <button class="button copy-button" type="button" data-copy="https://jewcal.org/jewcal-test-calendar.jewcal" aria-live="polite">Copy subscription link</button>
+        <a class="button primary" href="jewcal-test-calendar.jewcal" download>Save the sample calendar</a>
+        <button class="button copy-button" type="button" data-copy="https://jewcal.org/jewcal-test-calendar.jewcal" aria-live="polite">Copy calendar address</button>
       </div>
     </section>
   </main>
@@ -89,7 +148,7 @@
   <footer>
     <div class="footer-inner">
       <span>© 2026 JewCal</span>
-      <div class="footer-links"><a href="shared-calendars.html">Shared calendars</a><a href="privacy.html">Privacy</a><a href="https://github.com/hatt-io/jewcal-site">Site source</a><a href="mailto:hello@jewcal.org">Contact</a></div>
+      <div class="footer-links"><a href="shared-calendars.html">Shared calendars</a><a href="privacy.html">Privacy</a><a href="mailto:hello@jewcal.org">Contact</a></div>
     </div>
   </footer>
   <script>
@@ -99,7 +158,7 @@
           await navigator.clipboard.writeText(button.dataset.copy);
           button.textContent = 'Copied';
         } catch {
-          button.textContent = 'Copy failed — select the link above';
+          button.textContent = 'Could not copy — save the sample calendar instead';
         }
       });
     });
