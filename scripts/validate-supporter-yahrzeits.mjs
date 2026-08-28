@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-const FORMAT = "jewcal-supporter-yahrzeits-3";
+const FORMAT = "jewcal-supporter-yahrzeits-4";
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^(\d{1,2})\s+(.+?)\s+(\d{4,})$/;
 
@@ -20,7 +20,15 @@ export function validateSupporterYahrzeits(content) {
   root.entries.forEach((entry, index) => {
     const label = `entries[${index}]`;
     requireValue(entry && typeof entry === "object" && !Array.isArray(entry), `${label} must be an object`);
-    for (const field of ["id", "name", "from", "message", "hebrewDate"]) {
+    for (const field of [
+      "id",
+      "name",
+      "from",
+      "message",
+      "hebrewDate",
+      "displayFromHebrewDate",
+      "displayUntilHebrewDate",
+    ]) {
       requireValue(typeof entry[field] === "string" && entry[field].trim(), `${label}.${field} must be a nonblank string`);
     }
     const id = entry.id.trim();
@@ -28,6 +36,9 @@ export function validateSupporterYahrzeits(content) {
     requireValue(!identifiers.has(id), `${label}.id duplicates ${id}`);
     identifiers.add(id);
     validateHebrewDate(entry.hebrewDate, `${label}.hebrewDate`);
+    const displayFrom = validateHebrewDate(entry.displayFromHebrewDate, `${label}.displayFromHebrewDate`);
+    const displayUntil = validateHebrewDate(entry.displayUntilHebrewDate, `${label}.displayUntilHebrewDate`);
+    requireValue(displayFrom <= displayUntil, `${label} has a reversed display scope`);
   });
   return root;
 }
@@ -59,6 +70,29 @@ function validateHebrewDate(value, label) {
   const month = months[monthName];
   requireValue(month, `${label} has an invalid month for ${year}`);
   requireValue(day >= 1 && day <= daysInMonth(month, year), `${label} is not a real Hebrew date`);
+  return hebrewDayNumber(year, month, day);
+}
+
+/**
+ * Converts a valid Hebrew date to a comparable day number. Display scope follows the app's
+ * current Hebrew date, independently of the memorial's own yearly recurrence date.
+ */
+function hebrewDayNumber(year, month, day) {
+  let result = roshHashanahDay(year) + day - 1;
+  if (month < 7) {
+    const lastMonth = isLeapYear(year) ? 13 : 12;
+    for (let current = 7; current <= lastMonth; current += 1) {
+      result += daysInMonth(current, year);
+    }
+    for (let current = 1; current < month; current += 1) {
+      result += daysInMonth(current, year);
+    }
+  } else {
+    for (let current = 7; current < month; current += 1) {
+      result += daysInMonth(current, year);
+    }
+  }
+  return result;
 }
 
 function isLeapYear(year) {
@@ -110,15 +144,28 @@ function selfTest() {
     from: "Cohen family",
     message: "May her memory be a blessing.",
     hebrewDate: "15 Av 5786",
+    displayFromHebrewDate: "1 Tishrei 5786",
+    displayUntilHebrewDate: "29 Elul 5787",
   };
   assert.equal(validateSupporterYahrzeits(file([])).entries.length, 0);
   assert.equal(validateSupporterYahrzeits(file([valid])).entries[0].name, "רבקה");
   assert.throws(() => validateSupporterYahrzeits("{"));
   assert.throws(() => validateSupporterYahrzeits(file([valid, valid])));
   assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, message: " " }])));
+  assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, displayFromHebrewDate: " " }])));
   assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, hebrewDate: "30 Iyar 5786" }])));
+  assert.throws(() => validateSupporterYahrzeits(file([{
+    ...valid,
+    displayFromHebrewDate: "1 Tishrei 5787",
+    displayUntilHebrewDate: "29 Elul 5786",
+  }])));
   assert.throws(() => validateSupporterYahrzeits(file([{ ...valid, hebrewDate: "14 Adar 5784" }])));
   assert.doesNotThrow(() => validateSupporterYahrzeits(file([{ ...valid, hebrewDate: "14 Adar II 5784" }])));
+  assert.doesNotThrow(() => validateSupporterYahrzeits(file([{
+    ...valid,
+    displayFromHebrewDate: "29 Elul 5786",
+    displayUntilHebrewDate: "1 Tishrei 5787",
+  }])));
 }
 
 if (process.argv[2] === "--self-test") {

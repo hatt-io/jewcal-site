@@ -3,27 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="JewCal is a privacy-first Jewish calendar for iPhone and Android with Hebrew dates, zmanim, holidays, reminders, and personal events.">
-  <meta property="og:title" content="JewCal — Jewish calendar and zmanim for iPhone and Android">
-  <meta property="og:description" content="Hebrew dates, zmanim, holidays, reminders, and personal events—with no accounts, ads, or usage tracking.">
+  <meta name="description" content="The Hebrew calendar you’ll actually want to use. Keep track of yahrzeits, your shul’s luach, daily zmanim, reminders, and shared calendars.">
+  <meta property="og:title" content="JewCal — Hebrew calendar and zmanim for iPhone, iPad, and Android">
+  <meta property="og:description" content="Keep track of yahrzeits, your shul’s luach, daily zmanim, reminders, and shared calendars.">
   <meta property="og:image" content="https://jewcal.org/assets/feature-graphic.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="JewCal — The Hebrew calendar you’ll actually want to use.">
   <meta property="og:url" content="https://jewcal.org/">
   <meta name="twitter:card" content="summary_large_image">
-  <title>JewCal — Jewish calendar and zmanim for iPhone and Android</title>
+  <meta name="theme-color" content="#f2f7f6">
+  <title>JewCal — Hebrew calendar and zmanim for iPhone, iPad, and Android</title>
   <link rel="canonical" href="https://jewcal.org/">
   <link rel="icon" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html"><img src="assets/icon.png" alt="">JewCal</a>
+      <a class="brand" href="index.html"><img src="assets/icon.png" width="40" height="40" alt="">JewCal</a>
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="shared-calendars.html">Shared calendars</a>
-        <a href="#screenshots">Screenshots</a>
         <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/hatt-io/jewcal-site">Site source</a>
       </div>
     </nav>
   </header>
@@ -31,11 +35,12 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Jewish time, clearly</p>
-        <h1>Your calendar. Your zmanim. Your day.</h1>
-        <p class="lede">JewCal brings Hebrew dates, daily zmanim, holidays, reminders, and personal events together in one private app for iPhone and Android.</p>
-        <div class="platforms" aria-label="Available for iPhone and Android">
+        <p class="eyebrow">JewCal</p>
+        <h1>The Hebrew calendar you’ll actually want to use.</h1>
+        <p class="lede">See today’s Hebrew date and zmanim at a glance. Keep track of yahrzeits and personal events, follow your shul’s luach, and share a calendar with family or friends.</p>
+        <div class="platforms" aria-label="Built for iPhone, iPad, and Android">
           <span>iPhone</span>
+          <span>iPad</span>
           <span>Android</span>
         </div>
         <div class="actions">
@@ -44,44 +49,55 @@
           <a class="button" href="privacy.html">Privacy</a>
         </div>
       </div>
-      <div class="hero-phone"><img src="assets/calendar-light.png" alt="JewCal month calendar in light mode"></div>
+      <div class="hero-phone"><img src="assets/01-calendar.png" width="1320" height="2868" fetchpriority="high" alt="JewCal Hebrew month calendar on iPhone"></div>
     </section>
 
     <section class="section" id="features">
-      <p class="eyebrow">Built around the Jewish day</p>
-      <h2>Everything important, without clutter.</h2>
-      <p class="section-intro">JewCal presents the Hebrew calendar and its evening-to-evening context while keeping the interface fast, readable, and useful every day.</p>
+      <p class="eyebrow">One calendar for Jewish life</p>
+      <h2>From the month ahead to the details of today.</h2>
+      <p class="section-intro">Plan for Shabbos and Yom Tov, set the reminders that matter to you, and move easily between the month ahead and the details of today.</p>
       <div class="feature-grid">
-        <article class="feature"><h3>Hebrew calendar</h3><p>Month, day, and agenda views with holidays, parsha, fasts, and personal events.</p></article>
-        <article class="feature"><h3>Daily zmanim</h3><p>Clear, chronological zmanim with offline city search and configurable calculations.</p></article>
-        <article class="feature"><h3>Respectful reminders</h3><p>Flexible notifications with built-in protection for Shabbos Kodesh and Yom Tov.</p></article>
-        <article class="feature"><h3>The Jewish day, clearly</h3><p>Hebrew dates show their evening-to-evening civil span, with configurable tzeis calculations.</p></article>
-        <article class="feature"><h3>Shared calendars</h3><p>Create separate calendars, share a file once, or add a calendar from a website so it stays updated. <a href="shared-calendars.html">Read the guides.</a></p></article>
-        <article class="feature"><h3>Made for your device</h3><p>Native iPhone and Android apps with light and dark themes and Hebrew and English. Everyday features work without internet, and calendars update automatically when you are connected.</p></article>
+        <article class="feature"><h3>Calendar, Day, and Agenda</h3><p>Move from a Hebrew month to a rolling 60-day agenda or an exact day, with holidays, Shabbos, parsha, the Omer, Daf Yomi, events, and the full civil-date span.</p></article>
+        <article class="feature"><h3>Daily zmanim</h3><p>See the complete day in order, configure degrees and adjustments, and follow the relevant Kiddush Levana boundaries.</p></article>
+        <article class="feature"><h3>Yahrzeits and events</h3><p>Create yahrzeits, birthdays, anniversaries, wedding days, and personal events with Hebrew or Gregorian recurrence, including Adar and short-month rules.</p></article>
+        <article class="feature"><h3>Reminders that fit your day</h3><p>Choose reminders for events, candle lighting, holidays, fasts, Rosh Chodesh, Mincha, and Maariv. JewCal moves or suppresses them around Shabbos and Yom Tov.</p></article>
+        <article class="feature"><h3>Shared calendars</h3><p>Keep separate calendars, import <code>.jewcal</code> or <code>.ics</code> files, share encrypted exports, or follow an online calendar that refreshes automatically. <a href="shared-calendars.html">Read the guides.</a></p></article>
+        <article class="feature"><h3>Your location and practice</h3><p>Choose automatic or manual location, Israel or the Diaspora, 12- or 24-hour time, and detailed zmanim settings. Choosing Jerusalem during setup starts at 40 minutes; automatic location can ask before switching when you enter or leave.</p></article>
+        <article class="feature"><h3>Hebrew date converter</h3><p>Convert Gregorian and Hebrew dates, account for after sundown, see the full civil-date span, and create an event on the converted day.</p></article>
+        <article class="feature"><h3>Encrypted backup</h3><p>Protect a complete backup of your settings, location, calendars, events, and reminders with a passphrase, then restore it when you need it.</p></article>
+        <article class="feature"><h3>Made for your device</h3><p>Use JewCal on iPhone, iPad, and Android in English or Hebrew, LTR or RTL, light or dark mode. Android also includes calendar and daily-zmanim widgets.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="customs-title">
+      <div class="practice-card">
+        <p class="eyebrow">For your practice</p>
+        <h2 id="customs-title">Customs vary.</h2>
+        <p>Choose Israel or the Diaspora, set your location, and configure zmanim to match your practice. If you’re unsure which configuration is right for you, ask your rabbi for the proper configuration.</p>
       </div>
     </section>
 
     <section class="section" id="screenshots">
-      <p class="eyebrow">A focused daily view</p>
-      <h2>Calendar and zmanim at a glance.</h2>
-      <p class="section-intro">Native interfaces for both platforms, built around the same Hebrew calendar, zmanim, reminders, import and export, and local backup experience.</p>
+      <p class="eyebrow">See JewCal</p>
+      <h2>Calendar, agenda, and zmanim at a glance.</h2>
+      <p class="section-intro">The same Hebrew calendar and daily tools, designed for each platform.</p>
       <h3 class="screenshot-platform">Android</h3>
       <div class="screenshots">
-        <figure><img src="assets/calendar-light.png" alt="Calendar in light mode"><figcaption>Light calendar</figcaption></figure>
-        <figure><img src="assets/calendar-dark.png" alt="Calendar in dark mode"><figcaption>Dark calendar</figcaption></figure>
-        <figure><img src="assets/zmanim-light.png" alt="Daily zmanim in Jerusalem"><figcaption>Daily zmanim</figcaption></figure>
+        <figure><img src="assets/calendar-light.png" width="1080" height="1920" loading="lazy" decoding="async" alt="JewCal Hebrew month calendar on Android in light mode"><figcaption>Light calendar</figcaption></figure>
+        <figure><img src="assets/calendar-dark.png" width="1080" height="1920" loading="lazy" decoding="async" alt="JewCal Hebrew month calendar on Android in dark mode"><figcaption>Dark calendar</figcaption></figure>
+        <figure><img src="assets/zmanim-light.png" width="1080" height="1920" loading="lazy" decoding="async" alt="JewCal daily zmanim in Jerusalem on Android"><figcaption>Daily zmanim</figcaption></figure>
       </div>
       <h3 class="screenshot-platform">iPhone</h3>
       <div class="screenshots">
-        <figure><img src="assets/iphone-calendar.png" alt="JewCal month calendar on iPhone"><figcaption>Month calendar</figcaption></figure>
-        <figure><img src="assets/iphone-day.png" alt="JewCal Shabbos day view on iPhone"><figcaption>Shabbos day</figcaption></figure>
-        <figure><img src="assets/iphone-settings.png" alt="JewCal settings on iPhone"><figcaption>Settings</figcaption></figure>
+        <figure><img src="assets/01-calendar.png" width="1320" height="2868" loading="lazy" decoding="async" alt="JewCal Hebrew month calendar on iPhone"><figcaption>Calendar</figcaption></figure>
+        <figure><img src="assets/02-agenda.png" width="1320" height="2868" loading="lazy" decoding="async" alt="JewCal rolling agenda on iPhone"><figcaption>Agenda</figcaption></figure>
+        <figure><img src="assets/03-zmanim.png" width="1320" height="2868" loading="lazy" decoding="async" alt="JewCal daily zmanim on iPhone"><figcaption>Zmanim</figcaption></figure>
       </div>
     </section>
 
     <section class="section">
       <div class="privacy-card">
-        <div><h2>Private by design.</h2><p>No accounts, ads, analytics, crash reporting, or billing. Personal calendars, settings, and saved location stay on your device. JewCal checks for Supporter updates only while that calendar is turned on, and also checks online calendars you add.</p></div>
+        <div><h2>Your calendar stays yours.</h2><p>Personal calendars, settings, and saved location are stored on your device. Calendar updates come only from sources you add or enable.</p></div>
         <a class="button" href="privacy.html">Read the privacy policy</a>
       </div>
     </section>
@@ -89,8 +105,8 @@
 
   <footer>
     <div class="footer-inner">
-      <span>© 2026 JewCal</span>
-      <div class="footer-links"><a href="shared-calendars.html">Shared calendars</a><a href="support.html">App support</a><a href="privacy.html">Privacy</a><a href="https://buymeacoffee.com/hattio">Support JewCal</a><a href="mailto:hello@jewcal.org">Contact</a></div>
+      <div class="footer-credit"><span>© 2026 JewCal</span><span>Logo designed by my aishes chayil Rochel Hatt.</span></div>
+      <div class="footer-links"><a href="shared-calendars.html">Shared calendars</a><a href="support.html">App support</a><a href="privacy.html">Privacy</a><a href="https://buymeacoffee.com/hattio">Support JewCal</a><a href="mailto:help@jewcal.org">Contact</a></div>
     </div>
   </footer>
 </body>
